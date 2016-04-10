@@ -244,6 +244,39 @@ object ZMQ {
   private final val versionBelow300 = fullVersion < makeVersion(3, 0, 0)
   private final val versionAtleast300 = !versionBelow300
 
+  private class HSet[T] extends JHashSet[T] {
+      var hashValue = 0
+      
+      override def hashCode(): Int = {
+          hashValue
+      }
+      override def remove(key: Object): Boolean = {
+          val succ = super.remove(key)
+          if (succ)
+              hashValue -= key.hashCode()
+          succ
+      }
+      override def add(key: T): Boolean = {
+          val succ = super.add(key)
+          if (succ)
+              hashValue += key.hashCode()
+          succ
+      }
+  }
+  
+  private class LockHSet[T] extends JHashSet[T] {
+      override def hashCode(): Int = {
+          this.synchronized {
+              super.hashCode()
+          }
+      }
+      override def remove(key: Object): Boolean = {
+          this.synchronized {
+              super.remove(key)
+          }
+      }
+  }
+  
   /**
    * Represents a 0MQ Socket
    * @param context which Context the Socket belongs to
@@ -253,7 +286,7 @@ object ZMQ {
     import ZeroMQ._
 
     private[zeromq] final val ptr: Pointer = zmq.zmq_socket(context.ptr, `type`)
-    private final val messageDataBuffer = new JHashSet[Pointer] with zmq_free_fn {
+    private final val messageDataBuffer = new HSet[Pointer] with zmq_free_fn {
       override def invoke(data: Pointer, memory: Pointer): Unit = remove(memory)
     }
 
