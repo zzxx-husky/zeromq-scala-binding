@@ -4,14 +4,14 @@ name := "zeromq-scala-binding"
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.10.0"
+scalaVersion := "2.11.7"
 
-scalaBinaryVersion <<= scalaVersion
+scalaBinaryVersion := CrossVersion.binaryScalaVersion("2.11")
 
 libraryDependencies ++= Seq(
-  "net.java.dev.jna" %  "jna"           % "3.0.9",
-  "com.github.jnr"   %  "jnr-constants" % "0.8.2",
-  "org.scalatest"    %  "scalatest_2.10"     % "2.0.M5b" % "test"
+  "net.java.dev.jna" %  "jna"             % "4.2.2",
+  "com.github.jnr"   %  "jnr-constants"   % "0.9.1",
+  "org.scalatest"    %  "scalatest_2.11"  % "2.2.6"
 )
 
 scalacOptions := Seq("-deprecation", "-unchecked")
@@ -32,7 +32,7 @@ pomIncludeRepository := { _ => false }
 
 pomExtra := (
   <scm>
-    <url>https://github.com/valotrading/zeromq-scala-binding</url>
+    <url>https://github.com/zzxx-husky/zeromq-scala-binding</url>
   </scm>
   <developers>
     <developer>
@@ -40,9 +40,14 @@ pomExtra := (
       <name>Karim Vuorisara</name>
       <url>http://github.com/kro/</url>
     </developer>
+    <developer>
+      <id>zzxx</id>
+      <name>zzxx</name>
+      <url>http://github.com/zzxx-husky/</url>
+    </developer>
   </developers>
 )
 
 licenses := Seq("The Apache Software License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 
-homepage := Some(url("https://github.com/valotrading/zeromq-scala-binding"))
+homepage := Some(url("https://github.com/zzxx-husky/zeromq-scala-binding"))

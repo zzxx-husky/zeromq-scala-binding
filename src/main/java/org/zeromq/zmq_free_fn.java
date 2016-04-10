@@ -19,5 +19,5 @@ import com.sun.jna.Callback;
 import com.sun.jna.Pointer;
 
 public interface zmq_free_fn extends Callback {
-  void invoke(Pointer data, Pointer memory);
+	void invoke(Pointer data, Pointer memory);
 }

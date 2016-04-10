@@ -1,5 +1,7 @@
 # Scala Binding for ZeroMQ
 
+This version is intend to support jna-4.2.2 and lib-zmq-5.0.0, as the lastest ones currently.
+
 The Scala binding for ZeroMQ is based on ZeroMQ versions 2.1.x and uses [JNA][]
 for accessing native functions. It is a thin wrapper of the ZeroMQ API, but
 offers also a `jzmq`-like API intending to be compatible with the Java binding

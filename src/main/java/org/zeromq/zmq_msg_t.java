@@ -16,13 +16,9 @@
 package org.zeromq;
 
 import com.sun.jna.Pointer;
-import com.sun.jna.Structure;
+import com.sun.jna.Union;
 
-public class zmq_msg_t extends Structure {
-  private static final int ZMQ_MAX_VSM_SIZE = org.zeromq.ZeroMQ$.MODULE$.ZMQ_MAX_VSM_SIZE();
-
-  public Pointer content;
-  public byte    flags;
-  public byte    vsm_size;
-  public byte[]  vsm_data = new byte[ZMQ_MAX_VSM_SIZE];
+public class zmq_msg_t extends Union {
+	public byte[] underline = new byte[64];
+	public Pointer p;
 }
