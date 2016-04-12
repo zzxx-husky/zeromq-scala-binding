@@ -2,7 +2,7 @@ organization := "org.zeromq"
 
 name := "zeromq-scala-binding"
 
-version := "0.1.0-husky-team-SNAPSHOT"
+version := "0.2.0-husky-team-SNAPSHOT"
 
 scalaVersion := "2.11.8"
 

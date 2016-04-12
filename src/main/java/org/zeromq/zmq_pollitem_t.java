@@ -16,8 +16,8 @@
 package org.zeromq;
 
 import java.lang.reflect.Field;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Arrays;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
@@ -28,18 +28,10 @@ public class zmq_pollitem_t extends Structure {
 	public short events;
 	public short revents;
 	@Override
-	protected List<Field> getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		// TODO Auto-generated method stub
-		List<Field> res = new LinkedList<Field>(); 
-		try {
-			res.add(zmq_pollitem_t.class.getField("socket"));
-			res.add(zmq_pollitem_t.class.getField("fd"));
-			res.add(zmq_pollitem_t.class.getField("events"));
-			res.add(zmq_pollitem_t.class.getField("revents"));
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.exit(1);
-		}
-		return res;
+        return Arrays.asList(new String[] {
+            "socket", "fd", "events", "revents"
+        });
 	}
 }

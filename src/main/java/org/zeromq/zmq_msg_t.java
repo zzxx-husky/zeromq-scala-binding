@@ -15,10 +15,17 @@
  */
 package org.zeromq;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.Union;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.List;
 
-public class zmq_msg_t extends Union {
+import com.sun.jna.Structure;
+
+public class zmq_msg_t extends Structure {
 	public byte[] underline = new byte[64];
-	public Pointer p;
+
+    @Override
+    protected List<String> getFieldOrder() {
+        return Arrays.asList(new String[] { "underline" });
+    }
 }
