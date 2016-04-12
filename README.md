@@ -3,8 +3,10 @@
 This version is intend to support zeromq-4.0.4, jna-4.2.2 and jnr-0.8.4, as the lastest ones currently.
 
 CAUTION: 
+
 1. Since this is not an official version, use it with care. I suggest you use sbt `publish-local` to make it a local repository.
-2. This binding is not fully support zeromq-4.1.4. Since I found the struct of zmq_msg_t is changed again.
+
+2. This master branch do NOT support zeromq-4.1.4. See branch [zmq-4.1.4]{https://github.com/zzxx-husky/zeromq-scala-binding/tree/zmq-4.1.4}
 
 Here I also thank Alex for his contribution: https://github.com/alexdeleon/zeromq-scala-binding. He did most of the updates for ZeroMQLibrary and the two tests.
 
