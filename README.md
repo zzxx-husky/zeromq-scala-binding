@@ -6,7 +6,7 @@ CAUTION:
 
 1. Since this is not an official version, use it with care. I suggest you use sbt `publish-local` to make it a local repository.
 
-2. This master branch do NOT support zeromq-4.1.4. See branch [zmq-4.1.4]{https://github.com/zzxx-husky/zeromq-scala-binding/tree/zmq-4.1.4}
+2. This master branch do NOT support zeromq-4.1.4. See branch [zmq-4.1.4](https://github.com/zzxx-husky/zeromq-scala-binding/tree/zmq-4.1.4)
 
 Here I also thank Alex for his contribution: https://github.com/alexdeleon/zeromq-scala-binding. He did most of the updates for ZeroMQLibrary and the two tests.
 
