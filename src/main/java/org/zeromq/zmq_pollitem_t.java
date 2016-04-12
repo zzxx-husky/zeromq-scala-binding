@@ -29,9 +29,9 @@ public class zmq_pollitem_t extends Structure {
 	public short revents;
 	@Override
 	protected List<String> getFieldOrder() {
-		// TODO Auto-generated method stub
-		return Arrays.asList(new String[] {
-            "socket", "fd", "events", "revents"
-        });
+	    // TODO Auto-generated method stub
+	    return Arrays.asList(new String[] {
+                "socket", "fd", "events", "revents"
+            });
 	}
 }
