@@ -1,6 +1,6 @@
 # Scala Binding for ZeroMQ
 
-This version is intend to support zeromq-4.0.4, jna-4.2.2 and jnr-0.8.4, as the lastest ones currently.
+This version is intend to support zeromq-4.1.4, jna-4.2.2 and jnr-0.8.4, as the lastest ones currently.
 
 CAUTION: 
 
