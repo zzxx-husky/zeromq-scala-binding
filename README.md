@@ -1,8 +1,10 @@
 # Scala Binding for ZeroMQ
 
-This version is intend to support lib-zmq-4.X, jna-4.2.2 and jnr-0.8.4, as the lastest ones currently.
+This version is intend to support zeromq-4.0.4, jna-4.2.2 and jnr-0.8.4, as the lastest ones currently.
 
-CAUTION: Since this is not an official version, use it with care. I suggest you use sbt `publish-local` to make it a local repository.
+CAUTION: 
+1. Since this is not an official version, use it with care. I suggest you use sbt `publish-local` to make it a local repository.
+2. This binding is not fully support zeromq-4.1.4. Since I found the struct of zmq_msg_t is changed again.
 
 Here I also thank Alex for his contribution: https://github.com/alexdeleon/zeromq-scala-binding. He did most of the updates for ZeroMQLibrary and the two tests.
 
