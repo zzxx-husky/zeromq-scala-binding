@@ -1,16 +1,18 @@
-//Note: Use system default scala. Can be either 2.10 or 2.11
-
 organization := "org.zeromq"
 
 name := "zeromq-scala-binding"
 
-version := "0.1.0-SNAPSHOT"
+version := "0.1.0-husky-team-SNAPSHOT"
+
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
   "net.java.dev.jna" %  "jna"             % "4.2.2",
   "com.github.jnr"   %  "jnr-constants"   % "0.9.1",
   "org.scalatest"    %%  "scalatest"  % "2.2.6"
 )
+
+isSnapshot := true
 
 scalacOptions := Seq("-deprecation", "-unchecked")
 
