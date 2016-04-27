@@ -256,7 +256,15 @@ object ZMQ {
     private val hashValue = hashCode()
     
     private final val messageDataBuffer = new JHashSet[Pointer] with zmq_free_fn {
-      override def invoke(data: Pointer, memory: Pointer): Unit = remove(memory)
+      override def add(memory: Pointer):Boolean = 
+        this.synchronized {
+          super.add(memory)
+        }
+
+      override def invoke(data: Pointer, memory: Pointer): Unit = 
+        this.synchronized {
+          remove(memory)
+        }
       //make the hash value of this hash set to be the hash value of the socket
       override def hashCode(): Int = hashValue  
     }
